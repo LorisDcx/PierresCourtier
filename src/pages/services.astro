@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import { servicePages } from '../data/servicePages';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Aides et accompagnements avant achat de pierre précieuse",
+  "description": "Pages de service pour sécuriser l'achat d'une pierre précieuse : accompagnement, certificats, annonces, saphirs, rubis, émeraudes et re-certification.",
+  "url": "https://loris-lazulis.com/services/",
+  "mainEntity": servicePages.map((page) => ({
+    "@type": "Service",
+    "name": page.h1,
+    "url": `https://loris-lazulis.com/${page.slug}/`,
+    "description": page.description
+  }))
+};
+---
+
+<BaseLayout
+  title="Aides achat pierre précieuse"
+  description="Toutes les aides indépendantes pour sécuriser l'achat d'une pierre précieuse : accompagnement, certificat, annonce, saphir, rubis, émeraude."
+>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <section class="relative py-24 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 gradient-warm"></div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl" data-animate>
+        <span class="inline-block px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          Services
+        </span>
+        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-900 font-medium leading-tight">
+          Aides indépendantes avant achat de pierre précieuse
+        </h1>
+        <p class="mt-8 text-xl text-warm-800 leading-relaxed">
+          Ces pages répondent aux situations concrètes où un acheteur veut vérifier une offre, comprendre un certificat ou réduire le risque avant de payer.
+        </p>
+        <div class="mt-10">
+          <CTA text="Présenter mon projet" variant="copper" size="large" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white border-b border-warm-200">
+    <div class="max-w-4xl mx-auto px-6" data-animate>
+      <p class="text-lg text-warm-800 leading-relaxed">
+        Je ne vends pas de pierres et je ne suis pas rémunéré par les vendeurs. Mon service consiste à aider les particuliers à décider avec plus de méthode : lecture des documents, analyse des annonces, compréhension des traitements, vérification du cadre de transaction et identification des signaux d'alerte.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {servicePages.map((page) => (
+          <article class="bg-white rounded-2xl border border-warm-200 hover:border-copper-300 hover:shadow-warm-lg transition-all duration-300" data-animate>
+            <a href={`/${page.slug}`} class="block p-7">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-copper-700 bg-copper-100 rounded-full">
+                {page.badge}
+              </span>
+              <h2 class="mt-5 font-serif text-2xl text-warm-900 font-medium leading-tight">
+                {page.title}
+              </h2>
+              <p class="mt-4 text-warm-800 leading-relaxed">
+                {page.description}
+              </p>
+              <span class="mt-6 inline-flex items-center text-sm font-medium text-copper-700">
+                Lire la page
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from './CTA.astro';
+import type { ServicePageData } from '../data/servicePages';
+
+interface Props {
+  page: ServicePageData;
+}
+
+const { page } = Astro.props;
+const canonicalURL = new URL(`/${page.slug}/`, Astro.site);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": page.h1,
+    "description": page.description,
+    "url": canonicalURL.href,
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Loris Lazulis",
+      "url": canonicalURL.origin
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "France"
+    },
+    "serviceType": "Accompagnement indépendant avant achat de pierre précieuse"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": page.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": canonicalURL.origin
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": `${canonicalURL.origin}/services/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": page.h1,
+        "item": canonicalURL.href
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <section class="relative py-24 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 gradient-warm"></div>
+    <div class="absolute top-12 right-8 w-72 h-72 bg-copper-200/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 left-8 w-80 h-80 bg-warm-300/20 rounded-full blur-3xl"></div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl" data-animate>
+        <span class="inline-flex items-center px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          {page.badge}
+        </span>
+        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-900 font-medium leading-tight">
+          {page.h1}
+        </h1>
+        <div class="mt-8 space-y-5 text-lg md:text-xl text-warm-800 leading-relaxed">
+          {page.lead.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <CTA text="Présenter mon projet" variant="copper" size="large" />
+          <CTA text="Voir les honoraires" href="/honoraires" variant="secondary" size="large" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 bg-white border-b border-warm-200">
+    <div class="max-w-4xl mx-auto px-6" data-animate>
+      <p class="text-lg text-warm-800 leading-relaxed">
+        {page.intent}
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl mb-12" data-animate>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+          Quand cette aide est utile
+        </h2>
+        <p class="mt-5 text-warm-700 leading-relaxed">
+          L'objectif n'est pas de remplacer un laboratoire ou une expertise physique, mais de structurer la décision avant que l'argent soit engagé.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {page.situations.map((situation) => (
+          <div class="bg-white p-6 rounded-2xl border border-warm-200 shadow-warm" data-animate>
+            <div class="flex items-start gap-4">
+              <span class="w-8 h-8 rounded-xl bg-copper-100 text-copper-700 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <p class="text-warm-800 leading-relaxed">{situation}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-12" data-animate>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+          Ce que j'analyse
+        </h2>
+        <p class="mt-5 text-warm-700 leading-relaxed">
+          Chaque mission est adaptée au dossier, mais l'analyse suit toujours une logique de preuve, de cohérence et de prudence.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {page.deliverables.map((item) => (
+          <article class="bg-sand p-6 rounded-2xl border border-warm-200 card-warm" data-animate>
+            <h3 class="font-serif text-xl text-warm-900 font-medium">{item.title}</h3>
+            <p class="mt-4 text-sm text-warm-800 leading-relaxed">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-sand rounded-[3rem] mx-4">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12" data-animate>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+          Méthode de travail
+        </h2>
+        <p class="mt-5 text-warm-700 leading-relaxed">
+          Le processus reste simple : cadrer, vérifier, comparer, puis décider sans pression.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        {page.process.map((step, index) => (
+          <div class="bg-white p-6 rounded-2xl border border-warm-200 shadow-warm" data-animate>
+            <div class="w-12 h-12 flex items-center justify-center bg-copper-500 text-cream rounded-2xl font-serif text-xl">
+              {index + 1}
+            </div>
+            <h3 class="mt-6 font-medium text-warm-900">{step.title}</h3>
+            <p class="mt-3 text-sm text-warm-800 leading-relaxed">{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div data-animate>
+          <h2 class="font-serif text-3xl text-warm-900 font-medium">
+            Points vérifiés
+          </h2>
+          <ul class="mt-8 space-y-4">
+            {page.checks.map((check) => (
+              <li class="flex items-start gap-3 text-warm-800">
+                <span class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span class="leading-relaxed">{check}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div data-animate>
+          <h2 class="font-serif text-3xl text-warm-900 font-medium">
+            Signaux d'alerte
+          </h2>
+          <ul class="mt-8 space-y-4">
+            {page.warningSigns.map((warning) => (
+              <li class="flex items-start gap-3 text-warm-800">
+                <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </span>
+                <span class="leading-relaxed">{warning}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-warm-900 text-cream rounded-[3rem] mx-4">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12" data-animate>
+        <h2 class="font-serif text-3xl md:text-4xl font-medium">
+          Questions fréquentes
+        </h2>
+      </div>
+      <div class="space-y-5" data-animate>
+        {page.faqs.map((faq) => (
+          <div class="bg-white/8 border border-white/10 p-6 rounded-2xl">
+            <h3 class="font-medium text-copper-200">{faq.question}</h3>
+            <p class="mt-3 text-warm-300 leading-relaxed">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10" data-animate>
+        <div>
+          <h2 class="font-serif text-3xl text-warm-900 font-medium">
+            Ressources liées
+          </h2>
+          <p class="mt-4 text-warm-700">
+            Ces pages aident à compléter la lecture du dossier avant de prendre une décision.
+          </p>
+        </div>
+        <a href="/services" class="text-sm font-medium text-copper-700 hover:text-copper-800 underline underline-offset-4">
+          Voir toutes les aides
+        </a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {page.related.map((link) => (
+          <a href={link.href} class="block bg-white p-6 rounded-2xl border border-warm-200 hover:border-copper-300 hover:shadow-warm-lg transition-all duration-300" data-animate>
+            <h3 class="font-serif text-xl text-warm-900 font-medium">{link.title}</h3>
+            <p class="mt-3 text-sm text-warm-700 leading-relaxed">{link.text}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="relative overflow-hidden bg-gradient-to-br from-warm-100 via-copper-50 to-warm-100 rounded-[2.5rem] p-10 md:p-16 text-center" data-animate>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-copper-200/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-56 h-56 bg-warm-300/30 rounded-full blur-3xl"></div>
+        <div class="relative">
+          <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+            Besoin d'un avis avant de décider ?
+          </h2>
+          <p class="mt-5 text-lg text-warm-800 max-w-2xl mx-auto leading-relaxed">
+            Présentez votre projet, les documents disponibles et les questions qui vous bloquent. Je vous réponds sous 48h pour dire si l'accompagnement est pertinent.
+          </p>
+          <div class="mt-10">
+            <CTA text="Présenter mon projet" variant="copper" size="large" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

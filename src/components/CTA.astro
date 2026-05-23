@@ -1,0 +1,53 @@
+---
+interface Props {
+  text?: string;
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'copper';
+  size?: 'default' | 'large';
+  icon?: boolean;
+}
+
+const { 
+  text = 'Présenter mon projet', 
+  href = '/contact',
+  variant = 'primary',
+  size = 'default',
+  icon = true
+} = Astro.props;
+
+const baseClasses = "btn-warm inline-flex items-center justify-center font-medium tracking-wide rounded-full group relative overflow-hidden";
+
+const variantClasses = {
+  primary: "bg-gradient-to-r from-warm-800 to-warm-900 text-cream shadow-warm hover:shadow-warm-lg",
+  secondary: "bg-cream/50 backdrop-blur-sm text-warm-800 border-2 border-warm-300 hover:border-copper-400 hover:bg-warm-50",
+  copper: "bg-gradient-to-r from-copper-500 via-copper-600 to-copper-500 bg-[length:200%_100%] text-cream shadow-warm hover:shadow-warm-lg animate-gradient-x"
+};
+
+const sizeClasses = {
+  default: "px-7 py-3.5 text-sm gap-2",
+  large: "px-10 py-4 text-base gap-3"
+};
+---
+
+<a 
+  href={href}
+  class:list={[baseClasses, variantClasses[variant], sizeClasses[size]]}
+>
+  <span class="relative z-10">{text}</span>
+  {icon && (
+    <svg class="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  )}
+  <span class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></span>
+</a>
+
+<style>
+  @keyframes gradient-x {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .animate-gradient-x {
+    animation: gradient-x 3s ease infinite;
+  }
+</style>

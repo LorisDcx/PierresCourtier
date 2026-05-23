@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout 
+  title="Honoraires accompagnement pierre précieuse"
+  description="Acompte de mission et commission transparente pour l'accompagnement à l'achat de pierres naturelles certifiées. Exemple chiffré et conditions claires."
+>
+  <!-- Hero -->
+  <section class="relative py-28 overflow-hidden">
+    <div class="absolute inset-0 gradient-warm"></div>
+    <div class="absolute bottom-10 left-20 w-80 h-80 bg-copper-200/20 rounded-full blur-3xl"></div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Transparence
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-900 font-medium leading-tight">
+          Honoraires
+        </h1>
+        <p class="mt-8 text-xl text-warm-800 leading-relaxed">
+          Tarification transparente pour un accompagnement indépendant lors de l'achat de pierres naturelles certifiées.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mx-auto">
+        <div class="grid gap-6" data-animate>
+          <!-- Acompte -->
+          <div class="card-warm p-8 md:p-10 bg-sand rounded-3xl">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <h2 class="font-serif text-2xl text-warm-900 font-medium">
+                  Acompte de mission
+                </h2>
+                <p class="mt-3 text-warm-800 leading-relaxed">
+                  Versé au démarrage de l'accompagnement. Couvre le cadrage initial, la validation de faisabilité et le lancement de la recherche.
+                </p>
+              </div>
+              <span class="text-4xl font-medium text-copper-600 whitespace-nowrap">500 €</span>
+            </div>
+          </div>
+
+          <!-- Commission -->
+          <div class="card-warm p-8 md:p-10 bg-sand rounded-3xl">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <h2 class="font-serif text-2xl text-warm-900 font-medium">
+                  Commission
+                </h2>
+                <p class="mt-3 text-warm-800 leading-relaxed">
+                  Calculée sur le prix de la pierre, en cas d'acquisition. Le taux exact dépend de la complexité du dossier et du montant.
+                </p>
+              </div>
+              <span class="text-4xl font-medium text-copper-600 whitespace-nowrap">6 à 8 %</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conditions -->
+        <div class="mt-12 space-y-4" data-animate>
+          <div class="flex items-start gap-4 p-6 bg-green-50 rounded-2xl border border-green-100">
+            <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-medium text-green-900">Acompte déduit en cas d'acquisition</h3>
+              <p class="mt-1 text-green-700 text-sm leading-relaxed">
+                Si vous acquérez une pierre suite à l'accompagnement, l'acompte est intégralement déduit de la commission.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-6 bg-copper-50 rounded-2xl border border-copper-100">
+            <div class="w-10 h-10 rounded-xl bg-copper-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-medium text-copper-900">Acompte remboursé si aucune piste conforme</h3>
+              <p class="mt-1 text-copper-700 text-sm leading-relaxed">
+                Si, malgré mes recherches, aucune option correspondant à vos critères n'est trouvée, l'acompte vous est restitué.
+              </p>
+              <p class="mt-2 text-copper-600 text-xs italic">
+                Conforme = critères écrits (budget, type de pierre, traitements acceptés, certification attendue).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explications -->
+        <div class="mt-12 p-8 bg-warm-50 rounded-2xl" data-animate>
+          <h3 class="font-serif text-xl text-warm-900 font-medium">Ce qui est inclus, et ce qui ne l'est pas</h3>
+          <p class="mt-4 text-warm-700 leading-relaxed">
+            L'acompte de mission permet de démarrer un travail réel : cadrage, validation de faisabilité, et lancement d'une recherche ciblée. Il ne s'agit pas d'un "droit d'accès", mais d'un temps de travail consacré à votre dossier. La commission n'est due qu'en cas d'acquisition, lorsque vous décidez d'aller au bout d'une transaction.
+          </p>
+          <p class="mt-4 text-warm-700 leading-relaxed">
+            Les frais tiers (certifications indépendantes supplémentaires, transport assuré, éventuel escrow) ne font pas partie de mes honoraires : ils sont engagés uniquement si le cadre l'exige, et toujours avec votre accord préalable. Mon objectif est de rendre le coût total lisible dès le départ, et d'éviter les surprises. Pour comprendre le détail du processus, voir <a href="/comment-je-travaille" class="text-copper-600 hover:text-copper-700 underline underline-offset-2">comment je travaille</a>.
+          </p>
+        </div>
+
+        <!-- Summary -->
+        <div class="mt-12 p-8 md:p-10 bg-gradient-to-br from-warm-800 to-warm-900 text-cream rounded-3xl" data-animate>
+          <h3 class="font-serif text-xl font-medium text-center">
+            Aucun frais caché. Aucun engagement automatique.
+          </h3>
+          <p class="mt-4 text-warm-300 text-center text-sm">
+            Vous gardez le contrôle à chaque étape. La décision d'achat vous appartient toujours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example -->
+  <section class="py-28 bg-sand rounded-[3rem] mx-4">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mx-auto" data-animate>
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-4">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            Simulation
+          </div>
+          <h2 class="font-serif text-2xl text-warm-900 font-medium">
+            Exemple concret
+          </h2>
+        </div>
+        <div class="p-8 md:p-10 bg-white rounded-3xl shadow-warm">
+          <p class="text-warm-700 leading-relaxed">
+            Pour une pierre acquise à <strong class="text-copper-700 font-medium">25 000 €</strong> avec une commission de 7 % :
+          </p>
+          <ul class="mt-8 space-y-4">
+            <li class="flex justify-between text-warm-800 pb-4 border-b border-warm-100">
+              <span>Acompte initial</span>
+              <span class="font-medium text-warm-900">500 €</span>
+            </li>
+            <li class="flex justify-between text-warm-800 pb-4 border-b border-warm-100">
+              <span>Commission brute (7 %)</span>
+              <span class="font-medium text-warm-900">1 750 €</span>
+            </li>
+            <li class="flex justify-between text-warm-800 pb-4 border-b border-warm-100">
+              <span>Acompte déduit</span>
+              <span class="font-medium text-green-600">- 500 €</span>
+            </li>
+            <li class="flex justify-between text-warm-900 pt-2 font-medium text-lg">
+              <span>Reste à payer</span>
+              <span class="text-copper-600">1 250 €</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Questions fréquentes
+        </div>
+        <h2 class="font-serif text-2xl md:text-3xl text-warm-900 font-medium">
+          FAQ sur les honoraires
+        </h2>
+      </div>
+      <div class="space-y-6" data-animate style="transition-delay: 0.1s;">
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">L'acompte est-il perdu si je n'achète pas ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            L'acompte rémunère le travail de cadrage et de recherche. Si au moins une proposition conforme au cadre est présentée, il n'est pas remboursé. S'il n'existe aucune piste conforme, il est remboursé.
+          </p>
+        </div>
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Qui paie la re-certification indépendante ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Lorsqu'elle est demandée, elle est généralement à la charge de l'acheteur, car elle renforce sa propre sécurité. Elle n'est engagée qu'avec accord préalable.
+          </p>
+        </div>
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Est-ce que vous touchez l'argent de l'achat ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Non. Le prix de la pierre est réglé directement au vendeur ou via un tiers (escrow), afin de préserver un cadre clair et sécurisé.
+          </p>
+        </div>
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Le taux (6–8 %) dépend de quoi ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Principalement du montant, du niveau de rareté, des vérifications nécessaires et de la complexité de la transaction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 bg-sand rounded-t-[3rem]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="relative overflow-hidden bg-gradient-to-br from-warm-100 via-copper-50 to-warm-100 rounded-[2.5rem] p-12 md:p-16 text-center" data-animate>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-copper-200/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-warm-300/30 rounded-full blur-3xl"></div>
+        
+        <div class="relative">
+          <h2 class="font-serif text-3xl text-warm-900 font-medium">
+            Prêt à démarrer ?
+          </h2>
+          <p class="mt-6 text-lg text-warm-800 max-w-2xl mx-auto">
+            Présentez votre projet pour recevoir une première évaluation de faisabilité.
+          </p>
+          <div class="mt-10">
+            <a 
+              href="/contact" 
+              class="btn-warm inline-flex items-center px-8 py-4 text-base font-medium text-cream bg-gradient-to-r from-copper-500 to-copper-600 hover:from-copper-600 hover:to-copper-700 rounded-full shadow-warm group"
+            >
+              Présenter mon projet
+              <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

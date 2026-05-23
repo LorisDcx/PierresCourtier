@@ -1,0 +1,371 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { 
+  title, 
+  description = "Accompagnement indépendant pour l'achat de pierres naturelles certifiées. Sécurisez votre décision sans pression commerciale.",
+  ogImage = '/og-image.svg'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const absoluteOgImage = new URL(ogImage, Astro.site).href;
+const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    {googleSiteVerification && (
+      <meta name="google-site-verification" content={googleSiteVerification} />
+    )}
+    
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+      /* Critical font display to prevent FOIT */
+      @font-face {
+        font-family: 'Inter';
+        font-display: swap;
+        src: local('Inter'), local('Inter Regular'), local('Arial');
+        font-weight: 300 600;
+      }
+      @font-face {
+        font-family: 'Playfair Display';
+        font-display: swap;
+        src: local('Playfair Display'), local('PlayfairDisplay-Regular'), local('Georgia');
+        font-weight: 400 600;
+      }
+      
+      /* Prevent layout shift - reserve space for fonts */
+      .font-serif {
+        font-family: 'Playfair Display', Georgia, serif;
+      }
+      .font-sans {
+        font-family: 'Inter', system-ui, sans-serif;
+      }
+      
+      /* Ensure text remains visible during webfont load */
+      html {
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      
+      /* Critical above-the-fold styles */
+      .bg-cream { background-color: #fdfbf7; }
+      .text-warm-800 { color: #7a6241; }
+      .min-h-screen { min-height: 100vh; }
+    </style>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" as="style">
+    
+    <!-- Fonts (async loading to avoid render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" media="print" onload="this.media='all'; this.onload=null;" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" /></noscript>
+    {plausibleDomain && (
+      <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
+    )}
+    
+    <!-- SEO -->
+    <title>{title} | Loris Lazulis</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Loris Lazulis`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:locale" content="fr_FR" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Loris Lazulis`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Loris Lazulis",
+      "url": canonicalURL.origin,
+      "logo": canonicalURL.origin + "/favicon.svg",
+      "description": "Accompagnement indépendant avant achat de pierres naturelles certifiées.",
+      "areaServed": "France",
+      "serviceType": "Conseil et accompagnement avant achat de pierre précieuse"
+    })} />
+    
+    <!-- Slot for additional head content -->
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen bg-cream text-warm-800 font-sans antialiased overflow-x-hidden">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ::selection {
+    background-color: rgba(201, 123, 93, 0.25);
+  }
+
+  /* Smooth page transitions */
+  body {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Animations au scroll */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Respecter les préférences utilisateur pour les animations */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll,
+    [data-animate] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    
+    .gradient-warm {
+      animation: none;
+    }
+    
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Délais d'animation en cascade */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
+
+  /* Hover doux sur les liens */
+  a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Boutons avec effet de profondeur premium */
+  .btn-warm {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .btn-warm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .btn-warm:hover::before {
+    left: 100%;
+  }
+
+  .btn-warm:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -5px rgba(185, 150, 100, 0.35);
+  }
+  
+  .btn-warm:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+
+  /* Cartes avec effet de survol premium */
+  .card-warm {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+  }
+
+  .card-warm:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(185, 150, 100, 0.25);
+  }
+
+  /* Gradient chaud animé */
+  .gradient-warm {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e6 50%, #faf6ed 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Shimmer effect for premium feel */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,255,255,0.4) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Glow effect */
+  .glow-warm {
+    box-shadow: 0 0 40px rgba(201, 123, 93, 0.15);
+  }
+  
+  .glow-warm:hover {
+    box-shadow: 0 0 60px rgba(201, 123, 93, 0.25);
+  }
+
+  /* Focus accessible et élégant */
+  :focus-visible {
+    outline: 2px solid #c97b5d;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Scroll reveal pour les sections - plus fluide */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  [data-animate].revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), 
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  /* Stagger children animations */
+  [data-animate].revealed > *:nth-child(1) { transition-delay: 0ms; }
+  [data-animate].revealed > *:nth-child(2) { transition-delay: 100ms; }
+  [data-animate].revealed > *:nth-child(3) { transition-delay: 200ms; }
+  [data-animate].revealed > *:nth-child(4) { transition-delay: 300ms; }
+  [data-animate].revealed > *:nth-child(5) { transition-delay: 400ms; }
+  
+  /* Image hover zoom */
+  .img-zoom {
+    overflow: hidden;
+  }
+  
+  .img-zoom img {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .img-zoom:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, #c97b5d 0%, #b5624a 50%, #97503d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Smooth underline animation */
+  .link-underline {
+    position: relative;
+  }
+  
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #c97b5d, #b5624a);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+  
+  .link-underline:hover::after {
+    width: 100%;
+  }
+</style>
+
+<script>
+  // Animation au scroll avec stagger effect
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -80px 0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const target = entry.target as HTMLElement;
+        const delay = target.style.transitionDelay || `${index * 50}ms`;
+        target.style.transitionDelay = delay;
+        target.classList.add('revealed');
+        observer.unobserve(target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    observer.observe(el);
+  });
+  
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>

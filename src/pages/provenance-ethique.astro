@@ -1,0 +1,352 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout 
+  title="Provenance pierres précieuses"
+  description="Comment évaluer la provenance d'une pierre précieuse : traçabilité, documents, limites, risques et critères de sélection. Approche indépendante et transparente."
+>
+  <!-- Hero -->
+  <section class="relative py-28 overflow-hidden">
+    <div class="absolute inset-0 gradient-warm"></div>
+    <div class="absolute top-10 right-20 w-72 h-72 bg-copper-200/20 rounded-full blur-3xl"></div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+          </svg>
+          Éthique & Traçabilité
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-900 font-medium leading-tight">
+          Provenance des pierres et considérations éthiques
+        </h1>
+        <p class="mt-8 text-xl text-warm-800 leading-relaxed">
+          L'origine des pierres précieuses est parfois difficile à établir avec certitude. Je ne promets pas une traçabilité parfaite ; je privilégie une documentation rigoureuse et des vendeurs qui acceptent la transparence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead + Why Difficult -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div data-animate>
+        <p class="text-xl text-warm-700 leading-relaxed">
+          La traçabilité des pierres précieuses reste un défi à l'échelle mondiale. Les filières sont souvent complexes, avec de multiples intermédiaires entre l'extraction et la vente finale.
+        </p>
+      </div>
+
+      <!-- Why provenance is difficult -->
+      <div class="mt-16" data-animate>
+        <h2 class="font-serif text-2xl md:text-3xl text-warm-900 font-medium">
+          Pourquoi la provenance est difficile à établir
+        </h2>
+        <div class="mt-8 p-8 bg-warm-50 rounded-2xl">
+          <p class="text-warm-700 leading-relaxed">
+            La provenance d'une pierre précieuse n'est pas toujours traçable comme un produit industriel. Entre l'extraction, le tri, la taille, les échanges entre négociants et la vente finale, une pierre peut passer par plusieurs pays et plusieurs intermédiaires. Dans certains cas, l'origine géographique peut être estimée par un laboratoire via des analyses, mais ce n'est pas systématique, et cela ne garantit pas à lui seul des conditions d'extraction.
+          </p>
+          <p class="mt-4 text-warm-700 leading-relaxed">
+            C'est pourquoi je distingue deux sujets : <strong class="text-copper-700">l'origine</strong> (où la pierre a été extraite, lorsque c'est déterminable) et <strong class="text-copper-700">la traçabilité</strong> (les éléments documentaires disponibles sur son parcours). Une pierre peut avoir une origine indiquée mais une traçabilité faible, ou l'inverse. Mon objectif est de réduire les zones grises au maximum, et d'être transparent sur ce qui est connu, probable, ou inconnu.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Look For -->
+  <section class="py-20 bg-sand rounded-[3rem] mx-4">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-serif text-2xl md:text-3xl text-warm-900 font-medium text-center mb-12" data-animate>
+          Dans mon travail, je porte une attention particulière à :
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="card-warm bg-white p-6 rounded-2xl" data-animate style="transition-delay: 0.1s;">
+            <div class="w-12 h-12 flex items-center justify-center bg-copper-100 rounded-xl mb-4">
+              <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <h3 class="font-medium text-warm-900 text-lg">La transparence des vendeurs</h3>
+            <p class="mt-3 text-warm-800 leading-relaxed text-sm">
+              Je privilégie les professionnels capables de documenter l'historique des pierres qu'ils proposent, avec des informations vérifiables sur leur parcours.
+            </p>
+          </div>
+          <div class="card-warm bg-white p-6 rounded-2xl" data-animate style="transition-delay: 0.2s;">
+            <div class="w-12 h-12 flex items-center justify-center bg-copper-100 rounded-xl mb-4">
+              <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="font-medium text-warm-900 text-lg">La cohérence des documents</h3>
+            <p class="mt-3 text-warm-800 leading-relaxed text-sm">
+              Certificats, factures, historiques de propriété : chaque document est analysé pour s'assurer de sa cohérence avec les informations communiquées.
+            </p>
+          </div>
+          <div class="card-warm bg-white p-6 rounded-2xl" data-animate style="transition-delay: 0.3s;">
+            <div class="w-12 h-12 flex items-center justify-center bg-copper-100 rounded-xl mb-4">
+              <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+            </div>
+            <h3 class="font-medium text-warm-900 text-lg">La traçabilité disponible</h3>
+            <p class="mt-3 text-warm-800 leading-relaxed text-sm">
+              Lorsque c'est possible, je privilégie des pierres provenant de zones d'extraction connues pour leurs standards sociaux et environnementaux.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documents Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div data-animate>
+        <h2 class="font-serif text-2xl md:text-3xl text-warm-900 font-medium">
+          Documents et éléments de traçabilité
+        </h2>
+        <p class="mt-6 text-warm-700 leading-relaxed">
+          Lorsque le vendeur affirme une provenance, je cherche des éléments concrets : <a href="/comment-je-travaille" class="text-copper-600 hover:text-copper-700 underline underline-offset-2">certificat gemmologique</a> (laboratoire indépendant, numéro traçable), facture ou preuve de vente, cohérence des dates, et discours stable dans le temps. Dans certains cas, je recommande une re-certification ou une analyse complémentaire (origine/traitements) lorsque l'enjeu le justifie.
+        </p>
+        <p class="mt-4 text-warm-700 leading-relaxed">
+          L'objectif n'est pas de "prouver l'éthique" de manière absolue (ce qui est rarement possible), mais de vérifier que le vendeur accepte un cadre transparent, que les documents sont cohérents, et que la transaction peut se faire dans des conditions raisonnables (inspection, retour, escrow si nécessaire). Un vendeur qui refuse toute vérification supplémentaire ou presse la décision est, pour moi, un signal d'alerte.
+        </p>
+        
+        <div class="mt-8 grid md:grid-cols-2 gap-4">
+          <div class="p-4 bg-warm-50 rounded-xl">
+            <h4 class="font-medium text-warm-900 text-sm">Documents recherchés</h4>
+            <ul class="mt-3 space-y-2 text-sm text-warm-800">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Certificat gemmologique traçable
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Facture ou historique de vente
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Conditions de retour / inspection
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Possibilité de re-certification
+              </li>
+            </ul>
+          </div>
+          <div class="p-4 bg-warm-50 rounded-xl">
+            <h4 class="font-medium text-warm-900 text-sm">Points vérifiés</h4>
+            <ul class="mt-3 space-y-2 text-sm text-warm-800">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Cohérence des dates et informations
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Discours stable du vendeur
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Numéro de rapport vérifiable
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-copper-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Identité et réputation du vendeur
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warning Signs -->
+  <section class="py-20 bg-warm-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <div data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-warm-200 rounded-full text-warm-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          À surveiller
+        </div>
+        <h2 class="font-serif text-2xl md:text-3xl text-warm-900 font-medium">
+          Signaux d'alerte
+        </h2>
+        <p class="mt-4 text-warm-800 leading-relaxed">
+          Certains éléments me conduisent à recommander la prudence, voire à décliner un dossier :
+        </p>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="flex items-start gap-3 p-4 bg-white rounded-xl border border-warm-200">
+            <span class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </span>
+            <span class="text-warm-700 text-sm">Prix anormalement bas par rapport au marché</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-white rounded-xl border border-warm-200">
+            <span class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </span>
+            <span class="text-warm-700 text-sm">Provenance "trop belle" sans preuve documentaire</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-white rounded-xl border border-warm-200">
+            <span class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </span>
+            <span class="text-warm-700 text-sm">Urgence artificielle ou pression à l'achat</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-white rounded-xl border border-warm-200">
+            <span class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </span>
+            <span class="text-warm-700 text-sm">Refus de re-certification ou d'inspection</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-white rounded-xl border border-warm-200">
+            <span class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </span>
+            <span class="text-warm-700 text-sm">Vendeur anonyme ou sans historique vérifiable</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-white rounded-xl border border-warm-200">
+            <span class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </span>
+            <span class="text-warm-700 text-sm">Documents flous, anciens ou incohérents</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Refusal -->
+  <section class="py-20 bg-gradient-to-br from-warm-800 via-warm-900 to-warm-950 text-cream rounded-[3rem] mx-4">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center" data-animate>
+        <h2 class="font-serif text-3xl md:text-4xl font-medium">
+          Je peux refuser un dossier
+        </h2>
+        <p class="mt-8 text-lg text-warm-300 leading-relaxed">
+          Lorsque les zones grises sont trop importantes, ou que la provenance soulève des questions auxquelles je ne peux pas répondre de manière satisfaisante, je préfère décliner l'accompagnement.
+        </p>
+        <p class="mt-6 p-4 bg-copper-500/20 rounded-xl text-copper-200 font-medium">
+          L'honnêteté sur les limites fait partie du service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="py-20 bg-sand">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="p-8 bg-white rounded-2xl shadow-warm" data-animate>
+        <h2 class="font-serif text-xl text-warm-900 font-medium">
+          Limites de l'approche
+        </h2>
+        <p class="mt-4 text-warm-800 leading-relaxed">
+          Ce service vise à <strong class="font-medium text-copper-700">réduire les risques</strong>, pas à promettre une perfection absolue.
+        </p>
+        <p class="mt-4 text-warm-800 leading-relaxed">
+          La traçabilité complète reste l'exception dans le marché des pierres précieuses. Mon rôle est de maximiser la transparence possible, tout en vous informant clairement des incertitudes qui subsistent. <a href="/comment-je-travaille" class="text-copper-600 hover:text-copper-700 underline underline-offset-2">En savoir plus sur ma méthode</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Questions fréquentes
+        </div>
+        <h2 class="font-serif text-2xl md:text-3xl text-warm-900 font-medium">
+          FAQ sur la provenance
+        </h2>
+      </div>
+      <div class="space-y-6" data-animate style="transition-delay: 0.1s;">
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Une origine sur un certificat suffit-elle ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Pas toujours. Un certificat peut indiquer une origine géographique probable (basée sur des analyses), mais cela ne garantit pas les conditions d'extraction ni la traçabilité complète. L'origine est un indice, pas une preuve absolue d'éthique.
+          </p>
+        </div>
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Peut-on acheter une pierre "éthique" ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Le terme "éthique" est délicat dans ce secteur. Des certifications existent (ex : mines certifiées, filières auditées), mais elles restent minoritaires. Je préfère parler de "traçabilité maximale" et de "transparence du vendeur" plutôt que de promettre une éthique absolue.
+          </p>
+        </div>
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Est-ce que vous refusez certaines provenances ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Je ne refuse pas systématiquement une provenance, mais je refuse les situations où la documentation est insuffisante ou le vendeur non transparent. C'est le cadre de la transaction qui détermine ma décision, pas uniquement le pays d'origine annoncé.
+          </p>
+        </div>
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Traitements et origine : quelle différence ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            L'origine concerne le lieu d'extraction. Les traitements (chauffage, remplissage, etc.) concernent les modifications subies par la pierre après extraction. Un certificat peut mentionner les deux, mais ce sont des informations distinctes. Une pierre "non chauffée" n'est pas forcément "traçable", et inversement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-sand rounded-t-[3rem]">
+    <div class="max-w-6xl mx-auto px-6 text-center" data-animate>
+      <h2 class="font-serif text-3xl text-warm-900 font-medium">
+        Des questions sur la provenance ?
+      </h2>
+      <p class="mt-6 text-lg text-warm-800 max-w-2xl mx-auto">
+        Je suis disponible pour discuter de vos préoccupations concernant l'éthique et la traçabilité.
+      </p>
+      <div class="mt-10">
+        <a 
+          href="/contact" 
+          class="btn-warm inline-flex items-center px-8 py-4 text-base font-medium text-cream bg-gradient-to-r from-copper-500 to-copper-600 hover:from-copper-600 hover:to-copper-700 rounded-full shadow-warm group"
+        >
+          Me contacter
+          <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

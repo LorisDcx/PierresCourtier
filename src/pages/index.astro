@@ -1,0 +1,429 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import { featuredServiceLinks } from '../data/servicePages';
+---
+
+<BaseLayout 
+  title="Accompagnement achat pierre précieuse"
+  description="Aide indépendante avant achat de pierre précieuse : cadrage, analyse des offres, certificats, provenance et transaction sécurisée."
+>
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <!-- Animated background -->
+    <div class="absolute inset-0 gradient-warm"></div>
+    
+    <!-- Decorative floating elements -->
+    <div class="absolute top-20 right-10 w-64 h-64 bg-copper-200/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-warm-300/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 right-1/4 w-32 h-32 bg-copper-300/10 rounded-full blur-2xl animate-pulse-soft"></div>
+    
+    <div class="relative max-w-6xl mx-auto px-6 py-24">
+      <div class="max-w-3xl" data-animate>
+        <div class="font-serif text-5xl md:text-6xl lg:text-7xl font-medium text-warm-900 leading-tight tracking-tight">
+          Loris Lazulis
+        </div>
+        <h1 class="mt-8 text-xl md:text-2xl text-warm-700 font-light leading-relaxed">
+          Accompagnement indépendant pour l'achat de pierres naturelles certifiées
+        </h1>
+        <div class="mt-10 space-y-5 text-lg text-warm-800 leading-relaxed max-w-2xl">
+          <p class="opacity-0 animate-fade-in-up" style="animation-delay: 0.3s; animation-fill-mode: forwards;">
+            Acheter une pierre précieuse est une décision engageante.
+            Le marché est complexe, les informations souvent partielles, et les erreurs coûteuses.
+          </p>
+          <p class="opacity-0 animate-fade-in-up" style="animation-delay: 0.5s; animation-fill-mode: forwards;">
+            J'accompagne des particuliers dans leurs projets d'acquisition afin de sécuriser la démarche, clarifier les options, et réduire les risques.
+          </p>
+        </div>
+        <div class="mt-12 opacity-0 animate-fade-in-up" style="animation-delay: 0.7s; animation-fill-mode: forwards;">
+          <CTA text="Présenter mon projet" variant="copper" size="large" />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Decorative bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 120L60 110C120 100 240 80 360 75C480 70 600 80 720 85C840 90 960 90 1080 85C1200 80 1320 70 1380 65L1440 60V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-50 rounded-full text-copper-600 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Le constat
+        </div>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+          Un marché complexe à naviguer
+        </h2>
+        <p class="mt-8 text-lg text-warm-800 leading-relaxed">
+          Entre certificats difficiles à lire, provenance parfois floue, et vendeurs aux intérêts divergents, beaucoup d'acheteurs préfèrent être accompagnés avant de décider.
+        </p>
+        <!-- SEO Text Block -->
+        <div class="mt-8 p-6 bg-warm-50 rounded-2xl">
+          <p class="text-warm-700 leading-relaxed">
+            Beaucoup de projets concernent des pierres de couleur (saphir, rubis, émeraude, spinelle) ou des diamants, avec une question centrale : comment être sûr de ce que l'on achète. Mon accompagnement vise à réduire les zones grises : cadrage du besoin, recherche d'offres cohérentes, lecture des certificats gemmologiques, et vérification d'un cadre de transaction raisonnable. Toute pierre présentée doit être accompagnée d'un certificat émis par un laboratoire indépendant reconnu, traçable et lisible. Lorsque la provenance est trop floue ou que les conditions de vente ne permettent pas une sécurisation suffisante, je préfère refuser le dossier.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services SEO Section -->
+  <section class="py-24 bg-cream border-y border-warm-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12" data-animate>
+        <div class="max-w-3xl">
+          <span class="inline-block text-sm font-medium text-copper-600 tracking-wider uppercase mb-4">Aides concrètes</span>
+          <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+            Les situations où je peux vous aider
+          </h2>
+          <p class="mt-5 text-warm-700 leading-relaxed">
+            Chaque projet ne demande pas la même intervention. Certaines demandes portent sur un certificat, d'autres sur une annonce, une pierre précise ou la structure complète de l'achat.
+          </p>
+        </div>
+        <a href="/services" class="text-sm font-medium text-copper-700 hover:text-copper-800 underline underline-offset-4">
+          Voir toutes les aides
+        </a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredServiceLinks.map((service) => (
+          <a href={service.href} class="block bg-white p-7 rounded-2xl border border-warm-200 hover:border-copper-300 hover:shadow-warm-lg transition-all duration-300" data-animate>
+            <h3 class="font-serif text-2xl text-warm-900 font-medium">
+              {service.title}
+            </h3>
+            <p class="mt-4 text-warm-700 leading-relaxed">
+              {service.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Role Section -->
+  <section class="py-28 bg-sand rounded-t-[3rem]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div data-animate>
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-warm-100 rounded-full text-warm-700 text-sm font-medium mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            Mon rôle
+          </div>
+          <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+            Un accompagnement, pas une vente
+          </h2>
+          <p class="mt-6 text-lg text-warm-800 leading-relaxed">
+            Je n'interviens ni comme vendeur, ni comme expert gemmologue.
+          </p>
+          <p class="mt-4 text-lg text-warm-800 leading-relaxed">
+            La décision finale vous appartient toujours.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/comment-je-travaille" class="inline-flex items-center text-copper-600 hover:text-copper-700 text-sm font-medium underline underline-offset-2 transition-colors duration-300">
+              Découvrir ma méthode
+            </a>
+            <span class="text-warm-300">|</span>
+            <a href="/honoraires" class="inline-flex items-center text-copper-600 hover:text-copper-700 text-sm font-medium underline underline-offset-2 transition-colors duration-300">
+              Voir les honoraires
+            </a>
+          </div>
+        </div>
+        <div class="card-warm bg-white p-8 md:p-10 rounded-3xl shadow-warm" data-animate>
+          <h3 class="text-sm font-semibold text-copper-600 uppercase tracking-wider mb-8">
+            Ce que je fais pour vous
+          </h3>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-4 group">
+              <span class="w-8 h-8 rounded-xl bg-copper-100 flex items-center justify-center flex-shrink-0 group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-4 h-4 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </span>
+              <span class="text-warm-700 pt-1">Analyser la faisabilité de votre projet</span>
+            </li>
+            <li class="flex items-start gap-4 group">
+              <span class="w-8 h-8 rounded-xl bg-copper-100 flex items-center justify-center flex-shrink-0 group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-4 h-4 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </span>
+              <span class="text-warm-700 pt-1">Rechercher des offres cohérentes</span>
+            </li>
+            <li class="flex items-start gap-4 group">
+              <span class="w-8 h-8 rounded-xl bg-copper-100 flex items-center justify-center flex-shrink-0 group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-4 h-4 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </span>
+              <span class="text-warm-700 pt-1">Lire et vérifier les certificats existants</span>
+            </li>
+            <li class="flex items-start gap-4 group">
+              <span class="w-8 h-8 rounded-xl bg-copper-100 flex items-center justify-center flex-shrink-0 group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-4 h-4 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </span>
+              <span class="text-warm-700 pt-1">Structurer une transaction sécurisée</span>
+            </li>
+            <li class="flex items-start gap-4 group">
+              <span class="w-8 h-8 rounded-xl bg-copper-100 flex items-center justify-center flex-shrink-0 group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-4 h-4 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </span>
+              <span class="text-warm-700 pt-1">Attirer l'attention sur les limites et compromis</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-warm-100 rounded-full text-warm-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          Le processus
+        </div>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+          Comment se déroule un accompagnement
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="card-warm text-center p-8 bg-warm-50 rounded-3xl" data-animate style="transition-delay: 0.1s;">
+          <div class="w-14 h-14 mx-auto flex items-center justify-center bg-gradient-to-br from-copper-400 to-copper-500 rounded-2xl text-cream font-serif text-xl shadow-warm">
+            1
+          </div>
+          <p class="mt-6 text-warm-700 leading-relaxed">
+            Vous décrivez votre projet (pierre, budget, usage)
+          </p>
+        </div>
+        <div class="card-warm text-center p-8 bg-warm-50 rounded-3xl" data-animate style="transition-delay: 0.2s;">
+          <div class="w-14 h-14 mx-auto flex items-center justify-center bg-gradient-to-br from-copper-400 to-copper-500 rounded-2xl text-cream font-serif text-xl shadow-warm">
+            2
+          </div>
+          <p class="mt-6 text-warm-700 leading-relaxed">
+            Je valide la faisabilité et le cadre
+          </p>
+        </div>
+        <div class="card-warm text-center p-8 bg-warm-50 rounded-3xl" data-animate style="transition-delay: 0.3s;">
+          <div class="w-14 h-14 mx-auto flex items-center justify-center bg-gradient-to-br from-copper-400 to-copper-500 rounded-2xl text-cream font-serif text-xl shadow-warm">
+            3
+          </div>
+          <p class="mt-6 text-warm-700 leading-relaxed">
+            Je recherche et analyse des options pertinentes
+          </p>
+        </div>
+        <div class="card-warm text-center p-8 bg-warm-50 rounded-3xl" data-animate style="transition-delay: 0.4s;">
+          <div class="w-14 h-14 mx-auto flex items-center justify-center bg-gradient-to-br from-copper-400 to-copper-500 rounded-2xl text-cream font-serif text-xl shadow-warm">
+            4
+          </div>
+          <p class="mt-6 text-warm-700 leading-relaxed">
+            Vous décidez librement
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ethics Section -->
+  <section class="py-28 bg-gradient-to-br from-warm-800 via-warm-900 to-warm-950 text-cream rounded-[3rem] mx-4 my-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-500/20 rounded-full text-copper-300 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+          </svg>
+          Éthique
+        </div>
+        <h2 class="font-serif text-3xl md:text-4xl font-medium">
+          Provenance & éthique
+        </h2>
+        <p class="mt-8 text-lg text-warm-300 leading-relaxed">
+          La provenance des pierres est un sujet sensible.
+        </p>
+        <p class="mt-4 text-lg text-warm-300 leading-relaxed">
+          Je privilégie, lorsque c'est possible, des filières documentées, des vendeurs établis, et des zones d'extraction connues pour leurs standards.
+        </p>
+        <div class="mt-8 p-6 bg-copper-500/10 rounded-2xl border border-copper-500/20">
+          <p class="text-lg text-copper-200 leading-relaxed font-medium">
+            Je peux refuser un dossier lorsque la provenance est trop floue ou incompatible avec ces principes.
+          </p>
+        </div>
+        <div class="mt-10">
+          <a href="/provenance-ethique" class="group inline-flex items-center text-copper-300 hover:text-copper-200 transition-all duration-300">
+            En savoir plus
+            <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fit Section -->
+  <section class="py-28 bg-sand">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16" data-animate>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+          Pour qui est ce service ?
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-warm bg-white p-8 md:p-10 rounded-3xl shadow-warm border border-green-100" data-animate>
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-green-700 uppercase tracking-wider">
+              Ce service est adapté si
+            </h3>
+          </div>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-warm-700">Votre budget est défini</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-warm-700">Vous cherchez une pierre naturelle certifiée</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-warm-700">Vous souhaitez comprendre avant d'acheter</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card-warm bg-white p-8 md:p-10 rounded-3xl shadow-warm" data-animate style="transition-delay: 0.1s;">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-warm-100 flex items-center justify-center">
+              <svg class="w-5 h-5 text-warm-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-warm-700 uppercase tracking-wider">
+              Ce service n'est pas adapté si
+            </h3>
+          </div>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-full bg-warm-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-warm-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </span>
+              <span class="text-warm-800">Vous cherchez le prix le plus bas à tout prix</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-full bg-warm-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-warm-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </span>
+              <span class="text-warm-800">Vous cherchez une validation ponctuelle gratuite</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-full bg-warm-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-warm-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </span>
+              <span class="text-warm-800">Vous êtes dans l'urgence</span>
+            </li>
+          </ul>
+          <p class="mt-6 text-sm text-warm-700 italic">
+            Ce service s'adresse à des projets d'acquisition, pas à la vérification ponctuelle d'annonces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Questions fréquentes
+        </div>
+        <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+          FAQ
+        </h2>
+      </div>
+      <div class="space-y-6" data-animate style="transition-delay: 0.1s;">
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Quel budget minimum faut-il prévoir ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Mon accompagnement est adapté à des projets à partir de 3 000 € environ. En dessous, les frais d'accompagnement ne sont généralement pas justifiés par rapport au montant de l'achat.
+          </p>
+        </div>
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Est-ce que vous vendez des pierres ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Non. Je n'ai aucun stock et ne perçois aucune commission des vendeurs. Mon rôle est uniquement de vous accompagner dans votre décision, en toute indépendance.
+          </p>
+        </div>
+        <div class="card-warm bg-warm-50 p-6 rounded-2xl">
+          <h3 class="font-medium text-warm-900">Comment se passe le premier contact ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Vous remplissez le formulaire de contact avec votre projet. Je vous réponds sous 48h pour vous indiquer si un accompagnement est pertinent et dans quelles conditions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="relative overflow-hidden bg-gradient-to-br from-warm-100 via-copper-50 to-warm-100 rounded-[2.5rem] p-12 md:p-16 text-center" data-animate>
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-copper-200/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-warm-300/30 rounded-full blur-3xl"></div>
+        
+        <div class="relative">
+          <h2 class="font-serif text-3xl md:text-4xl text-warm-900 font-medium">
+            Prêt à sécuriser votre projet ?
+          </h2>
+          <p class="mt-6 text-lg text-warm-800 max-w-2xl mx-auto">
+            Décrivez votre projet et recevez une première réponse sous 48h.
+          </p>
+          <div class="mt-10">
+            <CTA text="Présenter mon projet" variant="copper" size="large" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

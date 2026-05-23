@@ -1,0 +1,278 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout 
+  title="Méthode accompagnement pierre précieuse"
+  description="Méthodologie d'accompagnement : cadrage, sourcing, lecture de certificats gemmologiques, provenance et sécurisation d'achat de pierres naturelles certifiées."
+>
+  <!-- Hero -->
+  <section class="relative py-28 overflow-hidden">
+    <div class="absolute inset-0 gradient-warm"></div>
+    <div class="absolute top-10 right-20 w-72 h-72 bg-copper-200/20 rounded-full blur-3xl"></div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Méthodologie
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-900 font-medium leading-tight">
+          Comment je travaille
+        </h1>
+        <p class="mt-8 text-xl text-warm-800 leading-relaxed">
+          Un accompagnement structuré, transparent, orienté vers la sécurité de votre décision.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Text Block 1 -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6" data-animate>
+      <div class="prose prose-warm max-w-none text-warm-700 leading-relaxed space-y-4">
+        <p>
+          Beaucoup de clients me contactent lorsqu'ils souhaitent acheter une pierre précieuse naturelle (saphir, rubis, émeraude, spinelle…) sans être certains de ce qu'ils regardent. Mon accompagnement vise à sécuriser la décision : compréhension du besoin, cohérence du budget, vérification des certificats gemmologiques, et sélection d'offres provenant de vendeurs identifiables.
+        </p>
+        <p>
+          Mon rôle n'est pas de "certifier" une pierre, mais d'organiser un processus clair : ce que le certificat couvre, ce qu'il ne couvre pas, et quelles vérifications supplémentaires sont pertinentes selon le cas (re-certification, période d'inspection, conditions de retour).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Do -->
+  <section class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="card-warm bg-sand p-8 md:p-10 rounded-3xl" data-animate>
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-copper-100 flex items-center justify-center">
+              <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 class="font-serif text-2xl text-warm-900 font-medium">
+              Ce que je fais
+            </h2>
+          </div>
+          <ul class="space-y-6">
+            <li class="flex gap-4 group">
+              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-copper-100 rounded-xl group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-warm-900">Cadrage et qualification</h3>
+                <p class="mt-2 text-warm-800 leading-relaxed">
+                  Analyse de votre projet, définition du périmètre, identification des contraintes et priorités.
+                </p>
+              </div>
+            </li>
+            <li class="flex gap-4 group">
+              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-copper-100 rounded-xl group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-warm-900">Sourcing ciblé</h3>
+                <p class="mt-2 text-warm-800 leading-relaxed">
+                  Recherche d'offres correspondant à vos critères auprès de sources fiables et documentées. <a href="/provenance-ethique" class="text-copper-600 hover:text-copper-700 underline underline-offset-2">En savoir plus sur la provenance</a>.
+                </p>
+              </div>
+            </li>
+            <li class="flex gap-4 group">
+              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-copper-100 rounded-xl group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-warm-900">Analyse de certificats</h3>
+                <p class="mt-2 text-warm-800 leading-relaxed">
+                  Lecture détaillée des certificats gemmologiques, explication des mentions techniques, mise en perspective.
+                </p>
+              </div>
+            </li>
+            <li class="flex gap-4 group">
+              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-copper-100 rounded-xl group-hover:bg-copper-200 transition-colors duration-300">
+                <svg class="w-5 h-5 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-warm-900">Sécurisation de la transaction</h3>
+                <p class="mt-2 text-warm-800 leading-relaxed">
+                  Accompagnement dans les modalités pratiques pour sécuriser l'achat. <a href="/honoraires" class="text-copper-600 hover:text-copper-700 underline underline-offset-2">Voir les conditions</a>.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-warm bg-warm-50 p-8 md:p-10 rounded-3xl" data-animate style="transition-delay: 0.1s;">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-warm-200 flex items-center justify-center">
+              <svg class="w-5 h-5 text-warm-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+            <h2 class="font-serif text-2xl text-warm-900 font-medium">
+              Ce que je ne fais pas
+            </h2>
+          </div>
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-warm-100 rounded-xl">
+                <svg class="w-5 h-5 text-warm-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-warm-800">Expertise gemmologique</h3>
+                <p class="mt-2 text-warm-700 leading-relaxed">
+                  Je ne suis pas gemmologue certifié. L'expertise physique des pierres relève de professionnels agréés.
+                </p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-warm-100 rounded-xl">
+                <svg class="w-5 h-5 text-warm-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-warm-800">Garantie de valeur</h3>
+                <p class="mt-2 text-warm-700 leading-relaxed">
+                  Aucune promesse de plus-value ou de revente. Le marché des pierres n'est pas un placement garanti.
+                </p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-warm-100 rounded-xl">
+                <svg class="w-5 h-5 text-warm-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-warm-800">Vente ou revente de pierres</h3>
+                <p class="mt-2 text-warm-700 leading-relaxed">
+                  Je n'ai aucun stock, aucune pierre à vendre. Mon indépendance garantit l'objectivité du conseil.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authenticity -->
+  <section class="py-28 bg-sand rounded-[3rem] mx-4">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Cadre
+        </div>
+        <h2 class="font-serif text-3xl text-warm-900 font-medium">
+          Authenticité
+        </h2>
+        <div class="mt-8 p-8 md:p-10 bg-white rounded-2xl shadow-warm">
+          <p class="text-lg text-warm-700 leading-relaxed">
+            Toute pierre présentée est accompagnée d'un certificat émis par un <strong class="text-copper-700 font-medium">laboratoire indépendant reconnu</strong>.
+          </p>
+        </div>
+        <!-- SEO Text Block 2 -->
+        <div class="mt-8 p-8 md:p-10 bg-warm-50 rounded-2xl text-left">
+          <p class="text-warm-700 leading-relaxed">
+            "Laboratoire reconnu" signifie : rapport traçable, indépendant, et lisible (numéro de rapport, poids, dimensions, traitements, remarques). Dans certains dossiers, je recommande une re-certification indépendante lorsque le rapport est ancien, incomplet, ou lorsque la transaction se fait à distance. Ces frais sont généralement à la charge de l'acheteur, car ils renforcent sa propre sécurité. Dans tous les cas, je refuse les situations où la documentation est floue ou où le vendeur refuse un cadre de transaction raisonnable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Limits -->
+  <section class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center" data-animate>
+        <h2 class="font-serif text-3xl text-warm-900 font-medium">
+          Limites
+        </h2>
+        <p class="mt-8 text-lg text-warm-700 leading-relaxed">
+          Toute acquisition comporte des compromis. Mon rôle est de les rendre visibles.
+        </p>
+        <p class="mt-4 text-warm-700 leading-relaxed">
+          Je ne promets pas la perfection, mais la transparence. Chaque projet a ses contraintes, et chaque pierre a ses caractéristiques propres.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-28 bg-sand rounded-[3rem] mx-4">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12" data-animate>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-copper-100 rounded-full text-copper-700 text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Questions fréquentes
+        </div>
+        <h2 class="font-serif text-3xl text-warm-900 font-medium">
+          FAQ
+        </h2>
+      </div>
+      <div class="space-y-6" data-animate style="transition-delay: 0.1s;">
+        <div class="bg-white p-6 rounded-2xl shadow-warm">
+          <h3 class="font-medium text-warm-900">Travaillez-vous uniquement avec des certificats ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Oui, dans la grande majorité des cas. Une pierre sans certificat d'un laboratoire reconnu ne permet pas de sécuriser l'achat. Si le vendeur n'a pas de rapport, je peux recommander une certification préalable à la vente.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-warm">
+          <h3 class="font-medium text-warm-900">Est-ce que vous pouvez vérifier une annonce trouvée en ligne ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Oui, c'est un cas fréquent. Je peux analyser l'annonce, le certificat associé, et vous donner un avis sur la cohérence du prix et la fiabilité apparente du vendeur. Cette vérification fait partie de l'accompagnement.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-warm">
+          <h3 class="font-medium text-warm-900">Combien de temps dure une recherche ?</h3>
+          <p class="mt-3 text-warm-800 leading-relaxed">
+            Cela dépend des critères. Une recherche ciblée peut aboutir en quelques jours si les attentes sont réalistes. Pour des pièces rares ou très spécifiques, plusieurs semaines peuvent être nécessaires.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 bg-gradient-to-br from-warm-800 via-warm-900 to-warm-950 rounded-t-[3rem]">
+    <div class="max-w-6xl mx-auto px-6 text-center" data-animate>
+      <h2 class="font-serif text-3xl text-cream font-medium">
+        Une question sur ma méthode ?
+      </h2>
+      <p class="mt-6 text-lg text-warm-400 max-w-2xl mx-auto">
+        Présentez votre projet et je vous répondrai sous 48h.
+      </p>
+      <div class="mt-10">
+        <a 
+          href="/contact" 
+          class="btn-warm inline-flex items-center px-8 py-4 text-base font-medium text-warm-900 bg-cream hover:bg-white rounded-full shadow-warm group"
+        >
+          Présenter mon projet
+          <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

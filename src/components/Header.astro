@@ -1,0 +1,140 @@
+---
+const navigation = [
+  { name: 'Accueil', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Méthode', href: '/comment-je-travaille' },
+  { name: 'Honoraires', href: '/honoraires' },
+  { name: 'À propos', href: '/a-propos' },
+  { name: 'Blog', href: '/blog' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-cream/80 backdrop-blur-xl border-b border-warm-200/30 transition-all duration-500" id="main-header">
+  <nav class="max-w-6xl mx-auto px-6 py-4 lg:py-5">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="group flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-copper-400 to-copper-600 flex items-center justify-center shadow-warm group-hover:shadow-warm-lg group-hover:scale-105 transition-all duration-500">
+          <svg class="w-5 h-5 text-cream" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l2 13h16l2-13L12 2zm0 3l6.5 4L17 17H7l-1.5-8L12 5z"/>
+          </svg>
+        </div>
+        <span class="font-serif text-xl md:text-2xl font-medium text-warm-900 tracking-wide group-hover:text-copper-600 transition-all duration-500">
+          Loris Lazulis
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-5 xl:gap-8">
+        {navigation.map((item) => (
+          <a 
+            href={item.href}
+            class:list={[
+              "nav-link relative text-sm font-medium tracking-wide transition-all duration-300 py-2 px-1",
+              currentPath === item.href 
+                ? "text-copper-700" 
+                : "text-warm-800 hover:text-warm-900"
+            ]}
+          >
+            {item.name}
+            <span class:list={[
+              "absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-copper-400 to-copper-500 transition-all duration-300 rounded-full",
+              currentPath === item.href ? "w-full" : "w-0"
+            ]}></span>
+          </a>
+        ))}
+        <a 
+          href="/contact" 
+          class="btn-warm ml-4 px-6 py-2.5 text-sm font-medium text-cream bg-gradient-to-r from-warm-800 to-warm-900 hover:from-warm-900 hover:to-warm-950 rounded-full shadow-warm hover:shadow-warm-lg"
+        >
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-btn"
+        class="hamburger lg:hidden p-2.5 text-warm-700 hover:text-warm-900 hover:bg-warm-100 rounded-xl transition-all duration-300"
+        aria-label="Menu"
+      >
+        <div class="hamburger-lines w-6 h-5 flex flex-col justify-between">
+          <span class="hamburger-line block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center"></span>
+          <span class="hamburger-line block h-0.5 w-full bg-current rounded-full transition-all duration-300"></span>
+          <span class="hamburger-line block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center"></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 pt-4 animate-fade-in-down">
+      <div class="flex flex-col gap-3 bg-warm-50 rounded-2xl p-4">
+        {navigation.map((item) => (
+          <a 
+            href={item.href}
+            class:list={[
+              "text-sm font-medium tracking-wide transition-all duration-300 py-2 px-3 rounded-xl",
+              currentPath === item.href 
+                ? "text-copper-700 bg-copper-50" 
+                : "text-warm-800 hover:text-warm-900 hover:bg-warm-100"
+            ]}
+          >
+            {item.name}
+          </a>
+        ))}
+        <a 
+          href="/contact" 
+          class="btn-warm mt-2 px-5 py-3 text-sm font-medium text-center text-cream bg-warm-800 hover:bg-warm-900 rounded-xl"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav-link:hover span {
+    width: 100%;
+  }
+  
+  .hamburger.is-active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.is-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .hamburger.is-active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .header-scrolled {
+    @apply py-3 shadow-warm bg-cream/95;
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const header = document.getElementById('main-header');
+  
+  // Mobile menu toggle
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuBtn?.classList.toggle('is-active');
+  });
+  
+  // Header scroll effect
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 50) {
+      header?.classList.add('header-scrolled');
+    } else {
+      header?.classList.remove('header-scrolled');
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
+</script>
