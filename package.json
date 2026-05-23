@@ -18,6 +18,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "astro": "^4.15.0",
     "astro-critters": "^2.2.1",
+    "nodemailer": "^8.0.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.10"

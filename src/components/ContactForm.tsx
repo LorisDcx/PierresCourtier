@@ -22,6 +22,7 @@ export default function ContactForm() {
   });
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -44,6 +45,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatus('success');
+        setErrorMessage('');
         setFormData({
           nom: '',
           email: '',
@@ -54,9 +56,12 @@ export default function ContactForm() {
           message: '',
         });
       } else {
+        const data = await response.json().catch(() => null);
+        setErrorMessage(data?.error || 'Une erreur s\'est produite pendant l\'envoi.');
         setStatus('error');
       }
     } catch (error) {
+      setErrorMessage('Impossible de joindre le serveur de contact.');
       setStatus('error');
     }
   };
@@ -221,7 +226,7 @@ export default function ContactForm() {
 
       {status === 'error' && (
         <div className="p-4 bg-red-50 border border-red-100 text-red-700 text-sm rounded-xl">
-          Une erreur s'est produite. Veuillez réessayer ou me contacter directement par email.
+          {errorMessage || 'Une erreur s\'est produite. Veuillez réessayer ou me contacter directement par email.'}
         </div>
       )}
 

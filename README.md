@@ -74,6 +74,15 @@ public/
 - **Mentions légales** : À compléter dans `src/pages/mentions-legales.astro`
 - **Formulaire** : l'API de contact est exposée sur `/api/contact`
 
+### Variables d'environnement
+
+Copie `.env.example` en `.env` en local, puis renseigne:
+
+- `GMAIL_USER`
+- `GMAIL_APP_PASSWORD`
+
+Le formulaire envoie les messages vers `lorisdcx.pro@gmail.com`.
+
 ## SEO
 
 - Sitemap automatique généré via `@astrojs/sitemap`
